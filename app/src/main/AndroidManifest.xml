@@ -18,9 +18,29 @@
         </activity>
 
         <receiver
-            android:name=".MyReceiver"
+            android:name=".FirstReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="com.aigestudio.action.ORDER_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".SecondReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter android:priority="100">
+                <action android:name="com.aigestudio.action.ORDER_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".ThirdReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="10">
+                <action android:name="com.aigestudio.action.ORDER_BROADCAST"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
